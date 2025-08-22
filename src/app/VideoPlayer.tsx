@@ -43,13 +43,17 @@ const VideoPlayer = () => {
 
   useEffect(() => {
     if (open) {
-      [...document.querySelectorAll("#video-player .video")].forEach((el) =>
-        el?.pause(),
-      );
+      (
+        [
+          ...document.querySelectorAll("#video-player .video"),
+        ] as HTMLVideoElement[]
+      ).forEach((el) => el?.pause());
     } else {
-      [...document.querySelectorAll("#video-player .video")].forEach((el) =>
-        el?.play(),
-      );
+      (
+        [
+          ...document.querySelectorAll("#video-player .video"),
+        ] as HTMLVideoElement[]
+      ).forEach((el) => el?.play());
     }
   }, [open]);
 
