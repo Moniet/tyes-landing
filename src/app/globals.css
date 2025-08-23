@@ -3,7 +3,7 @@
 :root {
     --background: #ffffff;
     --foreground: #171717;
-    --dev-unit: calc(min(100vw, 1440px) / 100);
+    --dev-unit: calc(min(100vw, 1600px) / 100);
 }
 
 @theme {

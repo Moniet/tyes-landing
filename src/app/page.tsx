@@ -723,7 +723,7 @@ const Footer = () => {
 
 export default function Home() {
   return (
-    <div className="font-sans max-w-[1440px] overflow-x-hidden mx-auto w-full h-full min-h-screen">
+    <div className="font-sans max-w-[1600px] overflow-x-hidden mx-auto w-full h-full min-h-screen">
       <main>
         <Hero />
         <Gutter>
