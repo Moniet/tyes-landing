@@ -1,7 +1,15 @@
 "use client";
 
 import { ReactEventHandler, useEffect, useRef, useState } from "react";
-import { Bluetooth, PartyPopper, Pause, Play, Plus, Wifi } from "lucide-react";
+import {
+  Bluetooth,
+  LucideRepeat2,
+  PartyPopper,
+  Pause,
+  Play,
+  Plus,
+  Wifi,
+} from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Noise, useNoiseConfig } from "react-noise";
 import "react-noise/css";
@@ -148,7 +156,7 @@ const VideoPlayer = () => {
               >
                 <motion.div
                   layout="position"
-                  className="text-sm bg-zinc-900 text-white px-4 py-2 rounded-full flex transition-all hover:scale-105 hover:shadow-lg cursor-pointer items-center justify-center -mb-5 whitespace-nowrap"
+                  className="text-sm bg-slate-800 text-white p-2.5 rounded-full flex transition-all hover:scale-105 hover:shadow-lg cursor-pointer items-center justify-center -mb-5 whitespace-nowrap"
                   onClick={() => {
                     if (playState !== "playing") {
                       video.current?.play();
@@ -158,23 +166,23 @@ const VideoPlayer = () => {
                   }}
                 >
                   {playState === "playing" ? (
-                    <Pause className="size-4 stroke-none fill-white mr-2 text-white" />
+                    <Pause className="size-4 stroke-none fill-white  text-white" />
                   ) : (
                     <Play className="size-4 stroke-none fill-white mr-2 " />
                   )}
-                  {playState === "playing" ? "Pause Demo" : "Start Demo"}
+                  {playState === "playing" ? "" : "Start Demo"}
                 </motion.div>
                 {playState === "playing" && (
                   <motion.div
                     layout="position"
-                    className="text-sm bg-zinc-50 text-zinc-800 border border-zinc-100 px-4 py-2 rounded-full flex transition-all hover:scale-105 hover:shadow-lg cursor-pointer items-center justify-center -mb-5 whitespace-nowrap"
+                    className="text-sm  bg-slate-100 text-zinc-800 border border-zinc-200 px-4 py-2 rounded-full flex transition-all hover:scale-105 hover:shadow-lg/5 cursor-pointer items-center justify-center -mb-5 whitespace-nowrap"
                     onClick={() => {
                       if (video.current) {
                         video.current.currentTime = 0;
                       }
                     }}
                   >
-                    <RiRestartLine className="size-4 mr-2 text-black" />
+                    <LucideRepeat2 className="size-4 mr-2 text-black" />
                     Restart
                   </motion.div>
                 )}
