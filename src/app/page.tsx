@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import Logo from "./logo";
-import AppDemo from "./AppDemo";
-import Hero from "./Hero";
+import Image from "next/image"
+import Logo from "./logo"
+import AppDemo from "./AppDemo"
+import Hero from "./Hero"
 import {
   ChevronLeft,
   ChevronRight,
@@ -34,15 +34,15 @@ import {
   LucidePartyPopper,
   LucideGem,
   PartyPopper,
-  AlertOctagonIcon,
-} from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+  AlertOctagonIcon
+} from "lucide-react"
+import { useEffect, useRef, useState } from "react"
 
-import { Noise, useNoiseConfig } from "react-noise";
-import "react-noise/css";
-import AvatarsSection from "./AvatarsSection";
-import Gutter from "./Gutter";
-import { AnimatePresence, motion } from "motion/react";
+import { Noise, useNoiseConfig } from "react-noise"
+import "react-noise/css"
+import AvatarsSection from "./AvatarsSection"
+import Gutter from "./Gutter"
+import { AnimatePresence, motion } from "motion/react"
 
 const Section2 = () => {
   return (
@@ -122,65 +122,65 @@ const Section2 = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 const categories = [
   {
     img: "https://images.unsplash.com/photo-1653501464974-5d981067a13d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGRlc2VydCUyMHNhZmFyaXxlbnwwfHwwfHx8MA%3D%3D",
     cateogry: "Adventure & Outdoor",
-    Icon: Mountain,
+    Icon: Mountain
   },
   {
     img: "https://images.unsplash.com/photo-1611094607507-8c8173e5cf33?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     cateogry: "Fitness",
-    Icon: Dumbbell,
+    Icon: Dumbbell
   },
   {
     img: "https://images.unsplash.com/photo-1614107070261-2aa1304618f6?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     cateogry: "Art",
-    Icon: Paintbrush,
+    Icon: Paintbrush
   },
   {
     img: "https://images.pexels.com/photos/2227774/pexels-photo-2227774.jpeg",
     cateogry: "Luxury",
-    Icon: LucideGem,
+    Icon: LucideGem
   },
   {
     img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     cateogry: "Food & Drink",
-    Icon: Utensils,
+    Icon: Utensils
   },
   {
     img: "https://images.unsplash.com/photo-1506601905416-f8802ad753ed?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     cateogry: "Music",
-    Icon: Music,
+    Icon: Music
   },
   {
     img: "https://images.unsplash.com/photo-1628354215124-dd0ab72828ac?q=80&w=1713&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     cateogry: "Travel",
-    Icon: Plane,
-  },
-];
+    Icon: Plane
+  }
+]
 
 const Section3 = () => {
-  const [index, setIndex] = useState(0);
-  const carousel = useRef<HTMLDivElement>(null);
-  const container = useRef<HTMLDivElement>(null);
-  const [maxWidth, setMaxWidth] = useState(0);
+  const [index, setIndex] = useState(0)
+  const carousel = useRef<HTMLDivElement>(null)
+  const container = useRef<HTMLDivElement>(null)
+  const [maxWidth, setMaxWidth] = useState(0)
 
   useEffect(() => {
-    setMaxWidth(carousel.current!.scrollWidth - container.current!.clientWidth);
-  }, []);
+    setMaxWidth(carousel.current!.scrollWidth - container.current!.clientWidth)
+  }, [])
 
   useNoiseConfig(
     {
       color: "150 150 150",
       opacity: 0.2,
-      key: "white-noise",
+      key: "white-noise"
     },
-    [],
-  );
+    []
+  )
 
   return (
     <div className="w-full pt-5 md:pt-20 lg:pt-30">
@@ -224,17 +224,17 @@ const Section3 = () => {
         <motion.div
           ref={carousel}
           animate={{
-            x: -Math.max(0, Math.min(index * (300 + 12), maxWidth)),
+            x: -Math.max(0, Math.min(index * (300 + 12), maxWidth))
           }}
           transition={{
             damping: 12,
             duration: 0.5,
-            type: "spring",
+            type: "spring"
           }}
           className="flex gap-[12px] w-full min-w-fit"
           style={{
             scrollbarWidth: "none",
-            msOverflowStyle: "none",
+            msOverflowStyle: "none"
           }}
         >
           {categories.map((cat, i) => (
@@ -258,8 +258,8 @@ const Section3 = () => {
         </motion.div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 const Section4 = () => {
   return (
@@ -286,7 +286,7 @@ const Section4 = () => {
               onClick={() => {
                 document
                   .querySelector("#footer")
-                  ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  ?.scrollIntoView({ behavior: "smooth", block: "start" })
               }}
               className="py-3 px-4 lg:text-base text-xs md:text-sm rounded-full hover:shadow-lg hover:scale-[1.05] transition-all duration-300 cursor-pointer tracking-wide text-white mt-7 bg-[#2A4747]"
             >
@@ -332,7 +332,7 @@ const Section4 = () => {
               onClick={() => {
                 document
                   .querySelector("#footer")
-                  ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  ?.scrollIntoView({ behavior: "smooth", block: "start" })
               }}
               className="py-3 px-4 lg:text-base text-xs md:text-sm rounded-full hover:shadow-lg hover:scale-[1.05] transition-all duration-300 cursor-pointer tracking-wide text-white mt-7 bg-[#2A4747]"
             >
@@ -342,8 +342,8 @@ const Section4 = () => {
         </article>
       </div>
     </div>
-  );
-};
+  )
+}
 
 const LaunchingSoon = () => {
   return (
@@ -383,13 +383,13 @@ const LaunchingSoon = () => {
               rotate: 0,
               x: 0,
               y: 0,
-              opacity: 1,
+              opacity: 1
             }}
             initial={{ rotate: 20, x: 60, y: 30, opacity: 0 }}
             // viewport={{ amount: 0. }}
             transition={{ duration: 0.5, type: "spring" }}
             style={{
-              transformOrigin: "center right",
+              transformOrigin: "center right"
             }}
           >
             <Image
@@ -427,7 +427,7 @@ const LaunchingSoon = () => {
             transition={{
               duration: 0.5,
               // delay: 0.4,
-              type: "spring",
+              type: "spring"
             }}
           >
             <Image
@@ -460,7 +460,7 @@ const LaunchingSoon = () => {
             // viewport={{ amount: 0. }}
             transition={{
               duration: 0.5,
-              type: "spring",
+              type: "spring"
             }}
           >
             <Image
@@ -485,7 +485,7 @@ const LaunchingSoon = () => {
             transition={{
               duration: 0.5,
 
-              type: "spring",
+              type: "spring"
             }}
           >
             <Image
@@ -499,54 +499,54 @@ const LaunchingSoon = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 const Footer = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [email2, setEmail2] = useState("");
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [email2, setEmail2] = useState("")
   const [status, setStatus] = useState<
     "idle" | "loading" | "error" | "success"
-  >("idle");
-  const [errorMsg, setErrorMsg] = useState("");
+  >("idle")
+  const [errorMsg, setErrorMsg] = useState("")
 
   const handleSubmit = (clientType: string) => async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("loading");
-    setErrorMsg("");
+    e.preventDefault()
+    setStatus("loading")
+    setErrorMsg("")
     try {
       const res = await fetch(`/api/subscribe`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
+          Accept: "application/json"
         },
         body: JSON.stringify(
           clientType === "customer"
             ? {
                 name,
                 email: email || email2,
-                clientType,
+                clientType
               }
-            : { email: email2, clientType },
-        ),
-      });
-      const data = await res.json();
+            : { email: email2, clientType }
+        )
+      })
+      const data = await res.json()
       if (!res.ok || data?.error) {
-        setStatus("error");
-        setErrorMsg(data?.error || "Something went wrong. Try again.");
+        setStatus("error")
+        setErrorMsg(data?.error || "Something went wrong. Try again.")
       } else {
-        setStatus("success");
-        setName("");
-        setEmail("");
-        setEmail2("");
+        setStatus("success")
+        setName("")
+        setEmail("")
+        setEmail2("")
       }
     } catch (err) {
-      setStatus("error");
-      setErrorMsg("Something went wrong. Try again.");
+      setStatus("error")
+      setErrorMsg("Something went wrong. Try again.")
     }
-  };
+  }
 
   return (
     <footer className="bg-zinc-800 py-20" id="footer">
@@ -670,10 +670,10 @@ const Footer = () => {
                   CONTACT US
                 </div>
                 <a
-                  href="mailto:raluca@tyes.app"
+                  href="mailto:sales@tyes.app"
                   className="text-white/80 hover:text-white transition-colors duration-300 font-sm mb-2"
                 >
-                  raluca@tyes.app
+                  sales@tyes.app
                 </a>
                 <p className="text-xs leading-5 text-white/50">
                   30N Gould Street, Ste 5240,
@@ -736,8 +736,8 @@ const Footer = () => {
         </div>
       </Gutter>
     </footer>
-  );
-};
+  )
+}
 
 export default function Home() {
   return (
@@ -761,5 +761,5 @@ export default function Home() {
       </main>
       <Footer />
     </div>
-  );
+  )
 }

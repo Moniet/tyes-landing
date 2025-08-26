@@ -59,7 +59,7 @@ const Hero = () => {
                 Join waitlist
               </button>
               <a
-                href="mailto:raluca@tyes.app"
+                href="mailto:sales@tyes.app"
                 className="ml-4 bg-zinc-50 px-5 max-sm:text-sm py-3 border-zinc-100 border rounded-full text-zinc-700 font-medium outline-none focus:outline-none transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-lg/10"
               >
                 Contact Us
