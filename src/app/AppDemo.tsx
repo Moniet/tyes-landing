@@ -70,7 +70,7 @@ const AppDemo = () => {
   const updateIndex = (idx: number) => () => {
     setActiveIndex(idx)
     const section = document.getElementById(`demo-section-${idx}`)
-    section?.scrollIntoView({ block: "start", behavior: "smooth" })
+    section?.scrollIntoView({ block: "start" })
   }
 
   const getActiveClass = (expectedIdx: number) =>
