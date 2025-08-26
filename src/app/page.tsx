@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Logo from "./logo";
+import AppDemo from "./AppDemo";
 import Hero from "./Hero";
 import {
   ChevronLeft,
@@ -32,13 +33,16 @@ import {
   LucideBike,
   LucidePartyPopper,
   LucideGem,
+  PartyPopper,
+  AlertOctagonIcon,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { motion } from "motion/react";
+
 import { Noise, useNoiseConfig } from "react-noise";
 import "react-noise/css";
 import AvatarsSection from "./AvatarsSection";
 import Gutter from "./Gutter";
+import { AnimatePresence, motion } from "motion/react";
 
 const Section2 = () => {
   return (
@@ -68,7 +72,6 @@ const Section2 = () => {
             alt=""
             width={500}
             height={300}
-            objectFit="cover"
             className="w-full h-auto"
             src={"/people-looking-down-at-camera.png?value=2"}
           />
@@ -93,11 +96,11 @@ const Section2 = () => {
         <div className="flex flex-col flex-1 max-md:hidden">
           <div className="flex w-full h-full md:p-8 lg:p-16 justify-center items-center overflow-hidden rounded-2xl bg-[#f4f4f4]">
             <Image
-              src="/tyes-event-UI-example.png"
+              src="/tyes-screenshot.png"
               alt=""
               width={300}
               height={500}
-              className="w-full h-auto object-cover rounded-2xl"
+              className="w-full h-auto object-cover rounded-2xl border border-zinc-200/50 shadow-lg/5"
             />
           </div>
         </div>
@@ -108,7 +111,6 @@ const Section2 = () => {
             height={600}
             alt=""
             className="w-full h-auto flex-1 object-cover rounded-lg"
-            objectFit="cover"
           />
           <Image
             src={"/people-on-couch.png"}
@@ -116,7 +118,6 @@ const Section2 = () => {
             height={600}
             alt=""
             className="w-full h-auto flex-1 object-cover rounded-lg"
-            objectFit="cover"
           />
         </div>
       </div>
@@ -141,7 +142,7 @@ const categories = [
     Icon: Paintbrush,
   },
   {
-    img: "https://images.unsplash.com/photo-1628336704853-9e8c932ac8f2?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: "https://images.pexels.com/photos/2227774/pexels-photo-2227774.jpeg",
     cateogry: "Luxury",
     Icon: LucideGem,
   },
@@ -159,96 +160,6 @@ const categories = [
     img: "https://images.unsplash.com/photo-1628354215124-dd0ab72828ac?q=80&w=1713&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     cateogry: "Travel",
     Icon: Plane,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=900&auto=format&fit=crop&q=60",
-    cateogry: "Photography",
-    Icon: Camera,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&auto=format&fit=crop&q=60",
-    cateogry: "Film & Theater",
-    Icon: Clapperboard,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1514361892635-cebbffcdf9ea?w=900&auto=format&fit=crop&q=60",
-    cateogry: "Nightlife",
-    Icon: LucidePartyPopper,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=900&auto=format&fit=crop&q=60",
-    cateogry: "Crafts",
-    Icon: Brush,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=900&auto=format&fit=crop&q=60",
-    cateogry: "Painting",
-    Icon: Palette,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?w=900&auto=format&fit=crop&q=60",
-    cateogry: "Air & Travel",
-    Icon: Plane,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=900&auto=format&fit=crop&q=60",
-    cateogry: "Events",
-    Icon: Calendar,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=900&auto=format&fit=crop&q=60",
-    cateogry: "Workshops",
-    Icon: Brain,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1428173495094-7c3b00dd7982?w=900&auto=format&fit=crop&q=60",
-    cateogry: "Social",
-    Icon: Users,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=900&auto=format&fit=crop&q=60",
-    cateogry: "Wellness",
-    Icon: Sparkle,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1444065381814-865dc9da92c0?w=900&auto=format&fit=crop&q=60",
-    cateogry: "Gaming",
-    Icon: Gamepad2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=900&auto=format&fit=crop&q=60",
-    cateogry: "Shopping",
-    Icon: ShoppingCart,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=900&auto=format&fit=crop&q=60",
-    cateogry: "Health",
-    Icon: HeartPulse,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=900&auto=format&fit=crop&q=60",
-    cateogry: "Outdoor",
-    Icon: Sun,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?w=900&auto=format&fit=crop&q=60",
-    cateogry: "Nature",
-    Icon: Leaf,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1465101178521-c1a9136a0b18?w=900&auto=format&fit=crop&q=60",
-    cateogry: "Cycling",
-    Icon: Bike,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=900&auto=format&fit=crop&q=60",
-    cateogry: "Sports",
-    Icon: LucideBike,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=900&auto=format&fit=crop&q=60",
-    cateogry: "Local",
-    Icon: MapPin,
   },
 ];
 
@@ -292,14 +203,14 @@ const Section3 = () => {
         <div className="flex gap-5 max-md:mt-12">
           <button
             aria-hidden="true"
-            onClick={() => setIndex(index - 1)}
+            onClick={() => setIndex(Math.min(0, index - 1))}
             className="size-[40px] rounded-full text-white bg-zinc-800 flex items-center justify-center"
           >
             <ChevronLeft className="size-5" />
           </button>
           <button
             aria-hidden="true"
-            onClick={() => setIndex(index + 1)}
+            onClick={() => setIndex(Math.min(index + 1, categories.length - 1))}
             className="size-[40px] rounded-full text-white bg-zinc-800 flex items-center justify-center"
           >
             <ChevronRight className="size-5" />
@@ -360,18 +271,25 @@ const Section4 = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 mt-20 items-start rounded-2xl overflow-hidden w-fit">
         <article className="bg-[#F8F5EE] h-full p-7 md:px-8 lg:px-10 xl:p-24 flex flex-col justify-center text-[#2A4747] flex-1">
           <header>
-            <h1 className="text-xl lg:text-2xl font-medium max-lg:text-pretty ">
+            <h1 className="text-xl leading-9 lg:text-2xl font-medium max-lg:text-pretty ">
               Book curated local experiences. <br className="max-sm:hidden" />
               Connect with people.
             </h1>
           </header>
-          <p className="text-xs leading-5 sm:text-sm lg:text-base mt-4 text-[#656565]">
-            From rooftop dinners to cooking classes and desert adventures — Tyes
-            helps you turn free time into memories. These aren’t just events.
-            They’re stories you’ll still be telling next year.
+          <p className="text-xs  sm:text-sm leading-6 lg:text-base mt-4 text-[#656565]">
+            Connect with people. Your city is full of unforgettable experiences.
+            Tyes helps you discover the best of them — and the people who make
+            them even better.
           </p>
           <footer>
-            <button className="py-3 px-4 lg:text-base text-xs md:text-sm rounded-full hover:shadow-lg hover:scale-[1.05] transition-all duration-300 cursor-pointer tracking-wide text-white mt-7 bg-[#2A4747]">
+            <button
+              onClick={() => {
+                document
+                  .querySelector("#footer")
+                  ?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+              className="py-3 px-4 lg:text-base text-xs md:text-sm rounded-full hover:shadow-lg hover:scale-[1.05] transition-all duration-300 cursor-pointer tracking-wide text-white mt-7 bg-[#2A4747]"
+            >
               Join Waitlist
             </button>
           </footer>
@@ -381,9 +299,8 @@ const Section4 = () => {
             width={500}
             height={500}
             alt=""
-            src="/image-grid-1.png"
+            src="/image-grid.jpg"
             className="size-full object-cover max-md:max-h-[280px]  "
-            objectFit="cover"
           />
         </div>
       </div>
@@ -393,25 +310,32 @@ const Section4 = () => {
             width={500}
             height={500}
             alt=""
-            src="/image-grid-2.png"
+            src="/image-grid-3.jpg"
             className="size-full object-cover max-md:max-h-[280px]"
-            objectFit="cover"
+            style={{ filter: "hue(10deg)" }}
           />
         </div>
         <article className="bg-[#F8F5EE] h-full p-7 md:px-8 lg:px-10 xl:p-24 flex flex-col justify-center text-[#2A4747] flex-1">
           <header>
-            <h1 className="text-xl lg:text-2xl font-medium max-sm:text-pretty">
+            <h1 className="text-xl lg:text-2xl leading-9 font-medium max-sm:text-pretty">
               Got an experience worth sharing?
               <br className="max-sm:hidden" /> For vendors & hosts.
             </h1>
           </header>
-          <p className="text-xs leading-5 sm:text-sm lg:text-base mt-4 text-[#656565]">
-            From rooftop dinners to cooking classes and desert adventures — Tyes
-            helps you turn free time into memories. These aren’t just events.
-            They’re stories you’ll still be telling next year.
+          <p className="text-xs leading-6 sm:text-sm lg:text-base mt-4 text-[#656565]">
+            Turn your idea into an unforgettable event. Whether it’s a workshop,
+            a social dinner, or something completely unique, Tyes helps you
+            reach the right crowd and bring your experience to life.
           </p>
           <footer>
-            <button className="py-3 px-4 lg:text-base text-xs md:text-sm rounded-full hover:shadow-lg hover:scale-[1.05] transition-all duration-300 cursor-pointer tracking-wide text-white mt-7 bg-[#2A4747]">
+            <button
+              onClick={() => {
+                document
+                  .querySelector("#footer")
+                  ?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+              className="py-3 px-4 lg:text-base text-xs md:text-sm rounded-full hover:shadow-lg hover:scale-[1.05] transition-all duration-300 cursor-pointer tracking-wide text-white mt-7 bg-[#2A4747]"
+            >
               Join Waitlist
             </button>
           </footer>
@@ -471,7 +395,7 @@ const LaunchingSoon = () => {
             <Image
               width={300}
               height={533}
-              src="/tyes-event-feed.png"
+              src="/discover.png"
               className="size-full object-cover"
               alt=""
             />
@@ -496,7 +420,7 @@ const LaunchingSoon = () => {
           </svg>
 
           <motion.div
-            className="absolute bottom-0 left-0 size-full"
+            className="absolute bottom-0 left-0 size-full scale-115 -mb-10"
             whileInView={{ rotate: 0, opacity: 1, transition: { delay: 0.4 } }}
             initial={{ rotate: -10, opacity: 0 }}
             // viewport={{ amount: 0. }}
@@ -508,10 +432,10 @@ const LaunchingSoon = () => {
           >
             <Image
               alt=""
-              src="/tyes-event-screenshot.png"
-              width={300}
-              height={533}
-              className="size-full object-cover"
+              src="/tyes-chat-page.png"
+              width={1861}
+              height={1150}
+              className=" size-full object-cover rounded-lg"
             />
           </motion.div>
         </div>
@@ -570,7 +494,6 @@ const LaunchingSoon = () => {
               width={300}
               height={533}
               className="size-full object-cover"
-              objectFit="cover"
             />
           </motion.div>
         </div>
@@ -580,11 +503,89 @@ const LaunchingSoon = () => {
 };
 
 const Footer = () => {
-  const handleSubmit = () => {};
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [email2, setEmail2] = useState("");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "error" | "success"
+  >("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleSubmit = (clientType: string) => async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    setErrorMsg("");
+    try {
+      const res = await fetch(`/api/subscribe`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(
+          clientType === "customer"
+            ? {
+                name,
+                email: email || email2,
+                clientType,
+              }
+            : { email: email2, clientType },
+        ),
+      });
+      const data = await res.json();
+      if (!res.ok || data?.error) {
+        setStatus("error");
+        setErrorMsg(data?.error || "Something went wrong. Try again.");
+      } else {
+        setStatus("success");
+        setName("");
+        setEmail("");
+        setEmail2("");
+      }
+    } catch (err) {
+      setStatus("error");
+      setErrorMsg("Something went wrong. Try again.");
+    }
+  };
 
   return (
-    <footer className="bg-zinc-800 py-20">
+    <footer className="bg-zinc-800 py-20" id="footer">
       <Gutter>
+        {/* Success toast */}
+        <AnimatePresence>
+          {status === "success" && (
+            <motion.div
+              initial={{ y: -40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -40, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 400, damping: 24 }}
+              className="mb-6 bg-black rounded-xl px-6 py-4 text-left text-balance text-white text-md max-w-xl w-fit shadow-xl flex items-center"
+            >
+              <PartyPopper className="size-7 mr-3" strokeWidth={1.5} /> You’ve
+              been added to the waitlist!
+              <br />A confirmation email has been sent.
+            </motion.div>
+          )}
+        </AnimatePresence>
+        {/* Error toast */}
+        <AnimatePresence>
+          {status === "error" && (
+            <motion.div
+              initial={{ y: -40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -40, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 400, damping: 24 }}
+              className="mb-6 bg-red-400 rounded-xl px-6 flex items-center justify-center text-sm tracking-wide gap-2 py-4 text-center text-white text-md max-w-xl w-fit shadow-2xl"
+            >
+              <AlertOctagonIcon
+                className="size-6 text-white"
+                strokeWidth={1.5}
+              />
+              {errorMsg}
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         <div className="flex max-lg:flex-wrap justify-between w-full gap-32">
           <div className="rounded-xl bg-zinc-900/40 p-8 min-w-[350px]">
             <div className="mb-1 tracking-wide text-brand text-sm uppercase">
@@ -593,7 +594,7 @@ const Footer = () => {
             <div className="text-white text-2xl tracking-wide text-balance mb-6">
               Get notified when we launch!
             </div>
-            <form>
+            <form onSubmit={handleSubmit("customer")}>
               <div className="rounded-xl flex gap-2 items-start flex-col">
                 <label
                   htmlFor="fullName"
@@ -605,7 +606,11 @@ const Footer = () => {
                   type="text"
                   placeholder="Enter your name"
                   required
+                  id="fullName"
                   className="w-full h-9  px-3 placeholder:text-white/50 text-sm text-white border border-zinc-700 rounded-lg focus:border-zinc-300 bg-zinc-800/30 transition-all ring-offset-1 outline-none focus:outline-none"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  disabled={status === "loading"}
                 />
               </div>
               <div className="rounded-xl flex gap-2 items-start flex-col mt-4">
@@ -621,12 +626,16 @@ const Footer = () => {
                   type="email"
                   required
                   className="w-full h-9 px-3 placeholder:text-white/50 text-sm text-white border border-zinc-700 rounded-lg focus:border-zinc-300 bg-zinc-800/30 transition-all ring-offset-1 outline-none focus:outline-none"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  disabled={status === "loading"}
                 />
                 <button
                   type="submit"
-                  className="py-2 px-6 mt-7 rounded-full bg-brand text-white font-medium text-sm"
+                  className="py-2 px-6 mt-7 rounded-full bg-brand text-white font-medium text-sm disabled:opacity-60"
+                  disabled={status === "loading" || !name || !email}
                 >
-                  Join Waitlist
+                  {status === "loading" ? "Joining..." : "Join Waitlist"}
                 </button>
               </div>
             </form>
@@ -638,7 +647,7 @@ const Footer = () => {
                   INFO
                 </div>
                 <a
-                  href=""
+                  href="#app-demo"
                   className="text-white/80 hover:text-white transition-colors duration-300 font-sm mb-2"
                 >
                   App Demo
@@ -657,13 +666,21 @@ const Footer = () => {
                 </a>
               </div>
               <div className="flex flex-col">
-                <div className="text-sm text-brand text-medium tracking-wide mb-5">
+                <a
+                  className="text-sm text-brand text-medium tracking-wide mb-5"
+                  href="mailto: raluca@tyes.app"
+                >
                   CONTACT US
-                </div>
-                <p className="text-white/80 hover:text-white transition-colors duration-300 font-sm mb-2">
-                  +1 (999) 999-99-99
-                  <br />
-                  hello@logoipsum.com, London
+                </a>
+                <a
+                  href="mailto:raluca@tyes.app"
+                  className="text-white/80 hover:text-white transition-colors duration-300 font-sm mb-2"
+                >
+                  raluca@tyes.app
+                </a>
+                <p className="text-xs leading-5 text-white/50">
+                  30N Gould Street, Ste 5240,
+                  <br /> Sheridan, WY 82801, United States
                 </p>
               </div>
               <div className="max-sm:hidden">
@@ -681,21 +698,25 @@ const Footer = () => {
                 </svg>
               </div>
             </div>
-
             <div className="flex flex-col flex-1">
               <div className="text-sm text-brand text-medium tracking-wide mb-5">
                 FOR VENDORS {"&"} VENUES
               </div>
-              <form>
+              <form onSubmit={handleSubmit("vendor")}>
                 <div className="rounded-xl flex gap-2 items-start flex-col">
                   <div className="flex w-full">
                     <input
-                      type="text"
-                      placeholder="Enter your name"
+                      type="email"
+                      placeholder="Enter your email"
+                      onChange={(e) => setEmail2(e.target.value)}
                       required
-                      className=" h-9 px-3 placeholder:text-white/50 text-sm text-white border border-zinc-700 rounded-lg focus:border-zinc-300 bg-zinc-800/30 transition-all ring-offset-1 outline-none focus:outline-none w-full md:w-1/2"
+                      value={email2}
+                      className=" h-9 px-3 placeholder:text-white/50 text-sm text-white border border-zinc-700 rounded-full focus:border-zinc-300 bg-zinc-800/30 transition-all ring-offset-1 outline-none focus:outline-none w-full md:w-1/2"
                     />
-                    <button className="h-9 font-medium text-white flex text-sm px-5 py-1 items-center bg-brand rounded-lg ml-2">
+                    <button
+                      disabled={!email2}
+                      className="h-9 disabled:opacity-50 font-medium text-white flex text-sm px-5 py-1 items-center bg-brand rounded-full ml-2"
+                    >
                       Submit
                       <ChevronRight className="size-5 ml-1" />
                     </button>
@@ -723,9 +744,10 @@ const Footer = () => {
 
 export default function Home() {
   return (
-    <div className="font-sans max-w-[1600px] overflow-x-hidden mx-auto w-full h-full min-h-screen">
+    <div className="font-sans max-w-[1600px] mx-auto w-full h-full min-h-screen">
       <main>
         <Hero />
+        <AppDemo />
         <Gutter>
           <div className="pb-20">
             <Section2 />
@@ -733,9 +755,9 @@ export default function Home() {
             <Section4 />
           </div>
         </Gutter>
-        <AvatarsSection />
-        <div className="h-[250px]" />
-        <Gutter>
+        {/*<AvatarsSection />*/}
+        {/*<div className="h-[250px]" />*/}
+        <Gutter className="mt-20">
           <LaunchingSoon />
         </Gutter>
         <div className="mt-40" />

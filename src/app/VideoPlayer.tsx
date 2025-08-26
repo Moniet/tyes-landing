@@ -75,10 +75,33 @@ const VideoPlayer = () => {
 
   return (
     <div
-      className="w-full max-w-full overflow-hidden max-sm:h-screen max-lg:h-[700px] lg:h-full relative"
+      className="w-full bg-white max-w-full flex items-end justify-center overflow-hidden lg:h-full relative"
       id="video-player"
     >
-      {videos.map(
+      <div className="w-fit h-fit relative z-10 mb-[40px]">
+        <div className="absolute max-md:top-[7%] max-md:left-[20.5%]  top-[6.25%] left-[46.5%] w-fit h-fit overflow-hidden rounded-[20px] md:rounded-[30px]">
+          <video
+            className="max-md:w-[190px] md:w-[235px] h-auto object-fit"
+            // style={{ clipPath: "inset(0 10% 0 10%)" }}
+            src={
+              "https://pub-db5cfbac23934b6e9312219ce0bd3ca4.r2.dev/tyes%20screen%20recording.mp4?=val=new-vid"
+            }
+            autoPlay
+            playsInline
+            muted
+            loop
+          />
+        </div>
+        <img
+          src="/hand-holding-phone.png"
+          className=" max-md:-ml-[150px] w-[450px] min-w-[450px]  md:min-w-[550px] md:w-[550px] z-1 relative"
+          alt=""
+        />
+        <div className="absolute bottom-0 left-0 right-0 w-full h-[100px]" />
+      </div>
+      <div className="size-[400px] sm:size-[550px] rounded-full absolute top-[25vh] z-2 left-1/2 max-lg:-translate-x-1/2 lg:left-10 aspect-square bg-gradient-to-bl from-brand/20 to-brand/70 " />
+
+      {/*{videos.map(
         (url, i) =>
           i > index - 2 &&
           i < index + 2 && (
@@ -93,26 +116,15 @@ const VideoPlayer = () => {
               playsInline
             />
           ),
-      )}
-      <div className="size-full top-0 left-0 absolute bg-zinc-600/50" />
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="absolute top-0 left-0 size-full"
-      >
-        <Noise
-          noiseKey="custom"
-          className="size-full pointer-events-none"
-          isAnimated
-        />
-      </motion.div>
-      <button
+      )}*/}
+      {/*<button
         className="px-7 py-3.5 whitespace-nowrap md:text-base text-sm rounded-full bg-black/40 cursor-pointer shadow-lg text-white flex items-center justify-center hover:scale-105 transition-all duration-200 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         onClick={() => setOpen(true)}
       >
         Watch The Demo
         <Play className="fill-white stroke-none size-4.5 ml-2" />
-      </button>
+      </button>*/}
+      <div className="h-[100px] bottom-[40px] absolute  left-0 right-0 w-full bg-gradient-to-b from-white/0 to-white z-10" />
 
       <AnimatePresence>
         {open && (
@@ -131,7 +143,7 @@ const VideoPlayer = () => {
               ref={video}
               className="w-[280px] mt-[10px] h-[499px] rounded-bl-[20px] rounded-br-[20px] object-cover absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-1"
               src={
-                "https://pub-db5cfbac23934b6e9312219ce0bd3ca4.r2.dev/tyes%20demo.mp4"
+                "https://pub-db5cfbac23934b6e9312219ce0bd3ca4.r2.dev/tyes%20demo.mp4?some=te"
               }
               playsInline
             />
