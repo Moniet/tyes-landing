@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { useRef, useState } from "react"
-import { motion, useMotionValueEvent, useScroll } from "motion/react"
+import Image from "next/image";
+import { useRef, useState } from "react";
+import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import {
   HiChat,
   HiCheckCircle,
@@ -10,29 +10,29 @@ import {
   HiDeviceMobile,
   HiOutlineTrendingUp,
   HiPlusCircle,
-  HiSearchCircle
-} from "react-icons/hi"
+  HiSearchCircle,
+} from "react-icons/hi";
 import {
   HiArrowUpCircle,
   HiBellAlert,
   HiEye,
   HiPaintBrush,
-  HiPhone
-} from "react-icons/hi2"
+  HiPhone,
+} from "react-icons/hi2";
 
 const demoItems = [
   {
     label: "Join an event",
     Icon: HiArrowUpCircle,
     img: "/event-page.jpeg",
-    description: "Join an event in just one click, directly from your feed."
+    description: "Join an event in just one click, directly from your feed.",
   },
   {
     label: "Chat, make friends",
     Icon: HiChat,
     img: "/chat-screen.jpeg",
     description:
-      "Connect instantly—chat with other attendees and make new friends before, during the events."
+      "Connect instantly—chat with other attendees and make new friends before, during the events.",
   },
   // {
   //   label: "Pay for an event",
@@ -46,58 +46,58 @@ const demoItems = [
     Icon: HiCheckCircle,
     img: "/event-creation.jpeg",
     description:
-      "Host your own gathering—set up an event in moments and share it with your community."
+      "Host your own gathering—set up an event in moments and share it with your community.",
   },
   {
     label: "Discover events",
     Icon: HiSearchCircle,
     img: "/event-shorts.jpeg",
     description:
-      "Discover new and unique events by viewing shorts from recent events!"
+      "Discover new and unique events by viewing shorts from recent events!",
   },
   {
     label: "View live stories",
     Icon: HiBellAlert,
-    img: "/event-stories.jpeg",
+    img: "/shorts-tyes.png",
     description:
-      "Discover a variety of events tailored to your interests, all in one place."
-  }
-]
+      "View stories of recent and upcoming events, tailored to your interests. View who's attending, and join the event in just one click!",
+  },
+];
 
 const AppDemo = () => {
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const updateIndex = (idx: number) => () => {
-    setActiveIndex(idx)
-    const section = document.getElementById(`demo-section-${idx}`)
-    section?.scrollIntoView({ block: "start" })
-  }
+    setActiveIndex(idx);
+    const section = document.getElementById(`demo-section-${idx}`);
+    section?.scrollIntoView({ block: "start" });
+  };
 
   const getActiveClass = (expectedIdx: number) =>
     activeIndex === expectedIdx
       ? "bg-brand/90 text-white"
-      : "bg-transparent text-white/50"
-  const ref = useRef<HTMLDivElement>(null)
+      : "bg-transparent text-white/50";
+  const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
-    target: ref
-  })
+    target: ref,
+  });
 
   const handleIdxUpdate = (idx: number, progress: number) => {
-    console.log(idx, progress)
+    console.log(idx, progress);
     if (
       progress >= idx / demoItems.length &&
       progress < (idx + 1) / demoItems.length
     ) {
-      setActiveIndex(idx)
+      setActiveIndex(idx);
     }
-  }
+  };
   useMotionValueEvent(scrollYProgress, "change", (progress) => {
-    handleIdxUpdate(0, progress)
-    handleIdxUpdate(1, progress)
-    handleIdxUpdate(2, progress)
-    handleIdxUpdate(3, progress)
-    handleIdxUpdate(4, progress)
-  })
+    handleIdxUpdate(0, progress);
+    handleIdxUpdate(1, progress);
+    handleIdxUpdate(2, progress);
+    handleIdxUpdate(3, progress);
+    handleIdxUpdate(4, progress);
+  });
 
   return (
     <div
@@ -122,7 +122,7 @@ const AppDemo = () => {
                   duration: 0.5,
                   type: "spring",
                   damping: 15,
-                  bounce: 8
+                  bounce: 8,
                 }}
               >
                 {demoItems.map((item, idx) => (
@@ -150,7 +150,7 @@ const AppDemo = () => {
               key={idx}
               id={`demo-btn-${idx}`}
               className={`py-2 px-3 cursor-pointer transition-colors duration-300 select-none rounded-full text-[13px] font-medium flex items-center tracking-wide ${getActiveClass(
-                idx
+                idx,
               )}`}
               onClick={updateIndex(idx)}
             >
@@ -172,7 +172,7 @@ const AppDemo = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AppDemo
+export default AppDemo;
