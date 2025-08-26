@@ -666,12 +666,9 @@ const Footer = () => {
                 </a>
               </div>
               <div className="flex flex-col">
-                <a
-                  className="text-sm text-brand text-medium tracking-wide mb-5"
-                  href="mailto: raluca@tyes.app"
-                >
+                <div className="text-sm text-brand text-medium tracking-wide mb-5">
                   CONTACT US
-                </a>
+                </div>
                 <a
                   href="mailto:raluca@tyes.app"
                   className="text-white/80 hover:text-white transition-colors duration-300 font-sm mb-2"
