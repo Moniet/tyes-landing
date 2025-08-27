@@ -5,6 +5,7 @@ import { Resend } from "resend";
 import Cloudflare from "cloudflare";
 import { render } from "@react-email/components";
 import SignUpEmail from "../../../components/SignUpEmail";
+import ConfirmationEmail from "@/components/ConfimationEmail";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -86,18 +87,24 @@ export const POST = async (req: NextRequest) => {
     />,
   );
 
-  if (data.clientType === "customer") {
-    try {
-      await resend.emails.send({
-        to: [data.email],
-        from: "Raluca <raluca@email.tyes.app>",
-        html,
-        subject: "Tyes // You're added to the waitlist",
-      });
-    } catch (e) {
-      console.error(e);
-    }
-  } else {
+  try {
+    await resend.emails.send({
+      to: [data.email],
+      from: "Raluca <raluca@email.tyes.app>",
+      html,
+      subject: "Tyes // You're added to the waitlist",
+    });
+  } catch (e) {
+    console.error(e);
+  }
+
+  if (clientType === "vendor") {
+    await resend.emails.send({
+      to: ["sales@tyes.app"],
+      from: "Site Admin <noreply@email.tyes.app>",
+      html: await render(<ConfirmationEmail email={data.email} />),
+      subject: "Tyes // A vendor is requested to join tyes app",
+    });
   }
 
   return NextResponse.json({ status: 200 });
