@@ -7,8 +7,8 @@ import {
   Preview,
   Row,
   Section,
-  Text
-} from "@react-email/components"
+  Text,
+} from "@react-email/components";
 
 const Logo = () => {
   return (
@@ -16,7 +16,7 @@ const Logo = () => {
       <Row>
         <Img
           src={
-            "https://pub-b7c7de69b6d641409d911c7e3fe4734f.r2.dev/tyes%20logo.svg"
+            "https://pub-b7c7de69b6d641409d911c7e3fe4734f.r2.dev/tyes-text-logo.png"
           }
           alt="Tyes Logo"
           width={80}
@@ -24,8 +24,8 @@ const Logo = () => {
         />
       </Row>
     </Section>
-  )
-}
+  );
+};
 
 const ForCustomer = ({ name = "there" }) => {
   return (
@@ -52,8 +52,8 @@ const ForCustomer = ({ name = "there" }) => {
         </Row>
       </Section>
     </>
-  )
-}
+  );
+};
 
 const ForVendor = () => {
   return (
@@ -79,15 +79,15 @@ const ForVendor = () => {
         </Row>
       </Section>
     </>
-  )
-}
+  );
+};
 
 const SignUpEmail = ({
   name,
-  clientType
+  clientType,
 }: {
-  name: string
-  clientType: string
+  name: string;
+  clientType: string;
 }) => {
   return (
     <Html>
@@ -97,7 +97,7 @@ const SignUpEmail = ({
           fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
           color: "#333",
           padding: "20px",
-          background: "#f9f9f9"
+          background: "#f9f9f9",
         }}
       >
         <Container>
@@ -108,7 +108,7 @@ const SignUpEmail = ({
         </Container>
       </Body>
     </Html>
-  )
-}
+  );
+};
 
-export default SignUpEmail
+export default SignUpEmail;
