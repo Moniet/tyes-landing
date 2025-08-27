@@ -363,7 +363,7 @@ const LaunchingSoon = () => {
           <div className="px-3 py-1 text-sm  w-fit rounded-full bg-brand text-white">
             Discover
           </div>
-          <div className="font-medium mt-2 text-xl">Discover Experience</div>
+          <div className="font-medium mt-2 text-xl">Discover Experiences</div>
           <svg
             className="w-full absolute bottom-0 left-0"
             viewBox="0 0 308 251"
