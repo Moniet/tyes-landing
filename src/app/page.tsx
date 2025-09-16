@@ -35,6 +35,14 @@ import {
   LucideGem,
   PartyPopper,
   AlertOctagonIcon,
+  PawPrint,
+  HandshakeIcon,
+  Languages,
+  Diamond,
+  Gem,
+  BeerIcon,
+  LucideForkKnife,
+  Transgender,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -48,34 +56,69 @@ const Section2 = () => {
   return (
     <div className="w-full pt-20 pb-28 md:py-32">
       <div className="w-full flex max-lg:flex-col justify-between lg:items-end  sm:gap-5">
-        <h2 className="sm:text-2xl xl:text-3xl text-xl font-medium max-md:text-pretty">
-          No endless scrolling. No boring plans.
-          <br className="max-md:hidden" />
-          <span className="inline-block w-12 md:w-14 lg:w-17 align-middle mx-1.5">
-            <Logo />
-          </span>
-          is the easiest way to <span className="text-brand/80">find and</span>
-          <br className="max-md:hidden" />{" "}
-          <span className="text-brand/80">book experiences</span> that match
-          your vibe.
-        </h2>
-        <p className="lg:text-sm max-sm:text-xs text-zinc-500 mt-5 sm:mt-0 max-w-[280px] leading-5 text-pretty">
-          Come solo or bring friends!
-          <br className="max-sm:hidden" /> Got something amazing to host? We’ll
-          help you fill the room.
-        </p>
+        <div className="w-fit h-fit relative">
+          <h2 className="sm:text-2xl xl:text-3xl text-xl font-medium max-md:text-pretty">
+            No endless scrolling. No boring plans.
+            <br className="max-md:hidden" />
+            <span className="inline-block w-12 md:w-14 lg:w-17 align-middle mx-1.5">
+              <Logo />
+            </span>
+            is the easiest way to{" "}
+            <span className="text-brand/80">find and</span>
+            <br className="max-md:hidden" />{" "}
+            <span className="text-brand/80">join experiences</span> that match
+            your vibe.
+          </h2>
+          <motion.div
+            className="absolute top-0 left-0 w-full h-full bg-white"
+            initial={{ scaleX: 1 }}
+            whileInView={{
+              scaleX: 0,
+              transition: { duration: 1.2, ease: "anticipate" },
+            }}
+            viewport={{ once: true }}
+            style={{ transformOrigin: "right" }}
+          />
+        </div>
+        <div className="relative w-fit h-fit">
+          <p className="lg:text-sm max-sm:text-xs text-zinc-500 mt-5 sm:mt-0 max-w-[280px] leading-5 text-pretty">
+            Come solo or bring friends!
+            <br className="max-sm:hidden" /> Got something amazing to host?
+            We’ll help you fill the room.
+          </p>
+          <motion.div
+            className="absolute top-0 left-0 w-full h-full bg-white"
+            initial={{ scaleX: 1 }}
+            whileInView={{
+              scaleX: 0,
+              transition: { duration: 1.2, ease: "anticipate" },
+            }}
+            viewport={{ once: true }}
+            style={{ transformOrigin: "right" }}
+          />
+        </div>
       </div>
 
       <div className="w-full mt-12 flex gap-3 max-sm:min-h-[50vh] h-fit">
         <div className="flex flex-col gap-3 flex-1">
-          <img
+          <motion.img
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            width={400}
+            height={400}
             alt=""
             className="w-full h-full lg:min-h-[400px] object-cover rounded-lg"
             src={
-              "https://plus.unsplash.com/premium_photo-1728244328915-52312228534d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBhcnR5fGVufDB8fDB8fHww"
             }
           />
-          <div className="w-full h-full rounded-lg bg-[#F4F4F4] flex items-center justify-center py-10">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="w-full h-full rounded-lg bg-[#F4F4F4] flex items-center justify-center py-10"
+          >
             <svg
               className="w-[80px]"
               viewBox="0 0 94 113"
@@ -91,30 +134,47 @@ const Section2 = () => {
                 fill="#58B2AD"
               />
             </svg>
-          </div>
+          </motion.div>
         </div>
         <div className="flex flex-col flex-1 max-md:hidden">
-          <div className="flex w-full h-full md:p-8 lg:p-16 justify-center items-center overflow-hidden rounded-2xl bg-[#f4f4f4]">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{
+              opacity: 1,
+              transition: { duration: 1, delay: 0.5 },
+            }}
+            className="flex w-full h-full md:p-8 lg:p-16 justify-center items-center overflow-hidden rounded-2xl bg-[#f4f4f4]"
+          >
             <Image
-              src="/tyes-screenshot.png"
+              src="/event-screenshot.jpg"
               alt=""
               width={300}
               height={500}
               className="w-full h-auto object-cover rounded-2xl border border-zinc-200/50 shadow-lg/5"
             />
-          </div>
+          </motion.div>
         </div>
         <div className="flex flex-col gap-3 flex-1">
-          <Image
-            src={"/tyes-icon-on-iphone.png"}
-            width={300}
-            height={600}
-            alt=""
-            className="w-full h-auto flex-1 object-cover rounded-lg"
-          />
-          <img
+          <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, transition: { duration: 1, delay: 1 } }}
+          >
+            <Image
+              src={"/tyes-icon-on-iphone.png"}
+              width={300}
+              height={600}
+              alt=""
+              className="w-full h-auto flex-1 object-cover rounded-lg"
+            />
+          </motion.span>
+          <motion.img
+            initial={{ opacity: 0 }}
+            whileInView={{
+              opacity: 1,
+              transition: { duration: 1, delay: 0.5 },
+            }}
             src={
-              "https://images.unsplash.com/photo-1539635278303-d4002c07eae3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              "https://images.unsplash.com/photo-1628336684860-6922c236b530?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8eWFjaHQlMjBwYXJ0eXxlbnwwfHwwfHx8MA%3D%3D"
             }
             alt=""
             className="w-full h-full flex-1 object-cover rounded-lg"
@@ -127,39 +187,50 @@ const Section2 = () => {
 
 const categories = [
   {
-    img: "https://images.unsplash.com/photo-1653501464974-5d981067a13d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGRlc2VydCUyMHNhZmFyaXxlbnwwfHwwfHx8MA%3D%3D",
-    cateogry: "Adventure & Outdoor",
-    Icon: Mountain,
+    img: "https://plus.unsplash.com/premium_photo-1680303989722-feeccf191161?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fHNwZWVkJTIwZGF0aW5nfGVufDB8fDB8fHww",
+    category: "Single's Events",
+    Icon: HeartPulse,
+  },
+
+  {
+    img: "https://images.unsplash.com/photo-1628336704853-9e8c932ac8f2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fHlhY2h0fGVufDB8fDB8fHww",
+    category: "Luxury",
+    Icon: Gem,
   },
   {
-    img: "https://images.unsplash.com/photo-1611094607507-8c8173e5cf33?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    cateogry: "Fitness",
-    Icon: Dumbbell,
+    img: "https://images.pexels.com/photos/4877850/pexels-photo-4877850.jpeg",
+    category: "Brunch",
+    Icon: LucideForkKnife,
   },
   {
-    img: "https://images.unsplash.com/photo-1614107070261-2aa1304618f6?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    cateogry: "Art",
-    Icon: Paintbrush,
+    img: "https://images.pexels.com/photos/12675262/pexels-photo-12675262.jpeg",
+    category: "Latino",
+    Icon: HandshakeIcon,
   },
   {
-    img: "https://images.pexels.com/photos/2227774/pexels-photo-2227774.jpeg",
-    cateogry: "Luxury",
-    Icon: LucideGem,
+    img: "https://images.unsplash.com/photo-1568992688065-536aad8a12f6?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWVldHVwfGVufDB8fDB8fHww",
+    category: "Learn Spanish",
+    Icon: Languages,
   },
   {
-    img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    cateogry: "Food & Drink",
-    Icon: Utensils,
+    img: "https://plus.unsplash.com/premium_photo-1664285639875-39524459d809?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZG9ncyUyMGdyaWxsfGVufDB8fDB8fHww",
+    category: "Dog Parents",
+    Icon: PawPrint,
+  },
+  {
+    img: "https://images.unsplash.com/photo-1591243315780-978fd00ff9db?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTl8fHBhcnR5fGVufDB8fDB8fHww",
+    category: "Bar hopping",
+    Icon: BeerIcon,
   },
   {
     img: "https://images.unsplash.com/photo-1506601905416-f8802ad753ed?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    cateogry: "Music",
+    category: "Live Music",
     Icon: Music,
   },
   {
-    img: "https://images.unsplash.com/photo-1628354215124-dd0ab72828ac?q=80&w=1713&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    cateogry: "Travel",
-    Icon: Plane,
+    img: "https://images.unsplash.com/photo-1628175175996-683d3996cca8?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGdheXxlbnwwfHwwfHx8MA%3D%3D",
+    category: "LGBTQ+",
+    Icon: Transgender,
   },
 ];
 
@@ -175,8 +246,12 @@ const Section3 = () => {
 
   useNoiseConfig(
     {
-      color: "150 150 150",
-      opacity: 0.2,
+      color: "10 10 10",
+      opacity: 0.06,
+      resolution: {
+        width: 1920,
+        height: 1080,
+      },
       key: "white-noise",
     },
     [],
@@ -185,25 +260,34 @@ const Section3 = () => {
   return (
     <div className="w-full pt-5 md:pt-20 lg:pt-30">
       <div className="w-full flex max-md:flex-col md:items-end justify-between">
-        <div>
+        <div className="relative w-fit h-fit">
           <h2 className="text-lg md:text-2xl font-medium">
-            What’s on{" "}
-            <span className="inline-block w-10 md:w-14 align-middle">
+            <span className="inline-block w-10 -mb-[1px] md:w-14 align-middle">
               <Logo />
             </span>{" "}
-            : All the plans worth
-            <br className="max-sm:hidden" /> leaving the house for — in one
+            collects events worth
+            <br className="max-sm:hidden" /> leaving the house for — all in one
             place.
           </h2>
           <p className="max-w-[500px] text-pretty text-zinc-500 text-xs max-md:leading-5 md:text-sm mt-3">
             Curated experiences where you can try something new, meet your kind
             of people, and make every experience feel like it matters.
           </p>
+          <motion.div
+            className="absolute top-0 left-0 w-full h-full bg-white"
+            initial={{ scaleX: 1 }}
+            whileInView={{
+              scaleX: 0,
+              transition: { duration: 1.2, ease: "anticipate" },
+            }}
+            viewport={{ once: true }}
+            style={{ transformOrigin: "right" }}
+          />
         </div>
         <div className="flex gap-5 max-md:mt-12">
           <button
             aria-hidden="true"
-            onClick={() => setIndex(Math.min(0, index - 1))}
+            onClick={() => setIndex(Math.max(0, index - 1))}
             className="size-[40px] rounded-full text-white bg-zinc-800 flex items-center justify-center"
           >
             <ChevronLeft className="size-5" />
@@ -237,24 +321,69 @@ const Section3 = () => {
             msOverflowStyle: "none",
           }}
         >
-          {categories.map((cat, i) => (
-            <div key={i} className="w-[300px] flex-shrink-0 h-[425px] relative">
-              <img
-                src={cat.img}
-                className="size-full rounded-xl object-cover select-none pointer-events-none"
-                alt=""
-              />
-              <div className="absolute top-0 left-0 bg-black/5 size-full rounded-xl" />
-              <Noise
-                className="w-full h-full absolute top-0 left-0"
-                isAnimated
-                noiseKey="white-noise"
-              />
-              <div className="absolute top-4 left-4 text-white  flex flex-col gap-2 font-medium drop-shadow-sm">
-                <cat.Icon className="size-5" strokeWidth={1.8} /> {cat.cateogry}
-              </div>
-            </div>
-          ))}
+          <motion.div
+            ref={carousel}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.2,
+                },
+              },
+            }}
+            animate={{
+              x: -Math.max(0, Math.min(index * (300 + 12), maxWidth)),
+            }}
+            transition={{
+              damping: 12,
+              duration: 1,
+              type: "spring",
+            }}
+            className="flex gap-[12px] w-full min-w-fit"
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+            }}
+          >
+            {categories.map((cat, i) => (
+              <motion.div
+                initial={{ x: 10, opacity: 0 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                variants={{
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { duration: 1, type: "spring" },
+                  },
+                  hidden: { opacity: 0, x: 10 },
+                }}
+                key={i}
+                className="w-[300px] rounded-xl overflow-hidden flex-shrink-0 h-[425px] relative"
+              >
+                <img
+                  src={cat.img}
+                  className="size-full rounded-xl overflow-hidden object-cover select-none pointer-events-none"
+                  alt=""
+                />
+                <div className="absolute top-0 left-0 bg-black/5 size-full rounded-xl" />
+                <Noise
+                  className="w-full h-full absolute top-0 left-0"
+                  noiseKey="white-noise"
+                />
+                <div className="absolute top-4 left-4 text-white  flex flex-col gap-2 font-medium drop-shadow-lg">
+                  <cat.Icon
+                    className="size-5 drop-shadow-lg drop-shadow-zinc-900/10"
+                    strokeWidth={1.8}
+                  />{" "}
+                  <span className="drop-shadow-lg">{cat.category}</span>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
       </div>
     </div>
@@ -264,11 +393,30 @@ const Section3 = () => {
 const Section4 = () => {
   return (
     <div className="flex flex-col pt-30">
-      <div className="text-center font-medium max-md:text-xl text-2xl max-w-[600px] text-pretty mx-auto">
+      <div className="text-center font-medium max-md:text-xl text-2xl max-w-[600px] text-pretty mx-auto relative">
         Don’t scroll through life. Live it. tyes helps you find experiences
         worth talking about — new places, new faces, and real connections.
+        <motion.div
+          className="absolute top-0 left-0 w-full h-full bg-white"
+          initial={{ scaleX: 1 }}
+          whileInView={{
+            scaleX: 0,
+            transition: { duration: 1.2, ease: "anticipate" },
+          }}
+          viewport={{ once: true }}
+          style={{ transformOrigin: "right" }}
+        />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 mt-20 items-start rounded-2xl overflow-hidden w-fit">
+      <motion.div
+        whileInView={{
+          y: 0,
+          opacity: 1,
+          transition: { duration: 1, delay: 0.5, type: "spring", bounce: 0.4 },
+        }}
+        initial={{ opacity: 0, y: 20 }}
+        viewport={{ once: true }}
+        className="grid grid-cols-1 md:grid-cols-2 mt-20 items-start rounded-2xl overflow-hidden w-fit"
+      >
         <article className="bg-[#F8F5EE] h-full p-7 md:px-8 lg:px-10 xl:p-24 flex flex-col justify-center text-[#2A4747] flex-1">
           <header>
             <h1 className="text-xl leading-9 lg:text-2xl font-medium max-lg:text-pretty ">
@@ -294,25 +442,40 @@ const Section4 = () => {
             </button>
           </footer>
         </article>
-        <div className="flex-1 h-full max-md:row-start-1">
-          <Image
-            width={500}
-            height={500}
+        <div className="flex-1 h-full max-md:row-start-1 relative">
+          <img
             alt=""
-            src="/image-grid.jpg"
-            className="size-full object-cover max-md:max-h-[280px]  "
+            src="https://images.unsplash.com/photo-1628336707411-800d30263f39?q=80&w=1200&auto=format&fit=crop"
+            className="w-full object-cover h-full lg:h-[450px] max-md:max-h-[280px] overflow-hidden"
+          />
+          <Noise
+            key={"white-noise"}
+            opacity={0.6}
+            className="absolute top-0 left-0 w-full h-full"
           />
         </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 mt-20 items-start rounded-2xl overflow-hidden w-fit">
-        <div className="flex-1 h-full">
-          <Image
-            width={500}
-            height={500}
+      </motion.div>
+      <motion.div
+        whileInView={{
+          y: 0,
+          opacity: 1,
+          transition: { duration: 1, delay: 0.5, type: "spring", bounce: 0.4 },
+        }}
+        initial={{ opacity: 0, y: 20 }}
+        viewport={{ once: true }}
+        className="grid grid-cols-1 md:grid-cols-2 mt-20 items-start rounded-2xl overflow-hidden w-fit"
+      >
+        <div className="flex-1 h-full relative">
+          <img
             alt=""
-            src="/image-grid-3.jpg"
-            className="size-full object-cover max-md:max-h-[280px]"
+            src="https://images.pexels.com/photos/28185598/pexels-photo-28185598.jpeg"
+            className="size-full object-cover max-md:max-h-[280px] max-h-[500px]"
             style={{ filter: "hue(10deg)" }}
+          />
+          <Noise
+            key={"white-noise"}
+            opacity={0.6}
+            className="absolute top-0 left-0 w-full h-full"
           />
         </div>
         <article className="bg-[#F8F5EE] h-full p-7 md:px-8 lg:px-10 xl:p-24 flex flex-col justify-center text-[#2A4747] flex-1">
@@ -340,7 +503,7 @@ const Section4 = () => {
             </button>
           </footer>
         </article>
-      </div>
+      </motion.div>
     </div>
   );
 };
@@ -348,16 +511,40 @@ const Section4 = () => {
 const LaunchingSoon = () => {
   return (
     <div className="w-full">
-      <h2 className="text-xl md:text-2xl font-medium md:leading-8">
-        Launching Soon on App Store
-        <br />
-        and Google Playstore
-      </h2>
-      <p className="text-sm text-zinc-500 mt-3 max-w-[450px] leading-6">
-        We’re starting in the UAE — and we’d love to have you in early.
-        <br className="max-sm:hidden" /> Join our waitlist for first dibs on
-        experiences and launch updates.
-      </p>
+      <div className="w-fit h-fit relative">
+        <h2 className="text-xl md:text-2xl font-medium md:leading-8">
+          Launching Soon on App Store
+          <br />
+          and Google Playstore
+        </h2>
+        <motion.div
+          className="absolute top-0 left-0 w-full h-full bg-white"
+          initial={{ scaleX: 1 }}
+          whileInView={{
+            scaleX: 0,
+            transition: { duration: 1.2, ease: "anticipate" },
+          }}
+          viewport={{ once: true }}
+          style={{ transformOrigin: "right" }}
+        />
+      </div>
+      <div className="w-fit h-fit relative">
+        <p className="text-sm text-zinc-500 mt-3 max-w-[450px] leading-6">
+          We’re starting in the UAE — and we’d love to have you in early.
+          <br className="max-sm:hidden" /> Join our waitlist for first dibs on
+          experiences and launch updates.
+        </p>
+        <motion.div
+          className="absolute top-0 left-0 w-full h-full bg-white"
+          initial={{ scaleX: 1 }}
+          whileInView={{
+            scaleX: 0,
+            transition: { duration: 1.2, delay: 0.1, ease: "anticipate" },
+          }}
+          viewport={{ once: true }}
+          style={{ transformOrigin: "right" }}
+        />
+      </div>
       <div className="mt-10 grid gap-5 max-[480px]:grid-cols-1 grid-cols-2 lg:grid-cols-4">
         <div className="flex-1 rounded-2xl  pl-3 pt-3  md:pl-8 md:pt-8 bg-[#f4f4f4] overflow-hidden max-sm:w-full relative aspect-[0.7] lg:aspect-[0.6] max-h-[500px]">
           <div className="px-3 py-1 text-sm  w-fit rounded-full bg-brand text-white">
@@ -420,7 +607,7 @@ const LaunchingSoon = () => {
           </svg>
 
           <motion.div
-            className="absolute bottom-0 left-0 size-full scale-115 -mb-10"
+            className="absolute bottom-0 left-0 size-full scale-115"
             whileInView={{ rotate: 0, opacity: 1, transition: { delay: 0.4 } }}
             initial={{ rotate: -10, opacity: 0 }}
             // viewport={{ amount: 0. }}
@@ -432,7 +619,7 @@ const LaunchingSoon = () => {
           >
             <Image
               alt=""
-              src="/tyes-chat-page.png"
+              src="/explore-screenshot.webp"
               width={1861}
               height={1150}
               className=" size-full object-cover rounded-lg"
@@ -465,7 +652,7 @@ const LaunchingSoon = () => {
           >
             <Image
               alt=""
-              src="/tyes-logo-with-bg.png"
+              src="/tyes-logo-with-bg.png?test"
               width={300}
               height={533}
               className="size-full object-cover max-sm:rounded-2xl"
@@ -478,7 +665,7 @@ const LaunchingSoon = () => {
           </div>
           <div className="font-medium mt-2 text-xl">Host an event</div>
           <motion.div
-            className="absolute bottom-0 left-0 size-full pt-20 px-8 "
+            className="absolute bottom-0 left-0 size-full"
             whileInView={{ opacity: 1, x: 0, transition: { delay: 1.2 } }}
             initial={{ opacity: 0, x: 20 }}
             // viewport={{ amount: 0. }}
@@ -488,12 +675,10 @@ const LaunchingSoon = () => {
               type: "spring",
             }}
           >
-            <Image
+            <img
               alt=""
-              src="/tyes-event-creation-screenshot.png"
-              width={300}
-              height={533}
-              className="size-full object-cover"
+              src="/tyes-event-creation-screenshot.webp"
+              className="w-auto h-[520px] object-cover mt-7"
             />
           </motion.div>
         </div>
@@ -585,7 +770,7 @@ const Footer = () => {
             </motion.div>
           )}
         </AnimatePresence>
-        e
+
         <div className="flex max-lg:flex-wrap justify-between w-full gap-32">
           <div className="rounded-xl bg-zinc-900/40 p-8 max-sm:w-full md:min-w-[350px]">
             <div className="mb-1 tracking-wide text-brand text-sm uppercase">

@@ -81,11 +81,13 @@ const VideoPlayer = () => {
       <div className="w-fit h-fit relative z-10 mb-[40px]">
         <div className="absolute max-md:top-[7%] max-md:left-[20.5%]  top-[6.25%] left-[46.5%] w-fit h-fit overflow-hidden rounded-[20px] md:rounded-[30px]">
           <video
+            preload="none"
             className="max-md:w-[190px] md:w-[235px] h-auto object-fit"
             // style={{ clipPath: "inset(0 10% 0 10%)" }}
             src={
-              "https://pub-db5cfbac23934b6e9312219ce0bd3ca4.r2.dev/tyes%20screen%20recording.mp4?=val=new-vid"
+              "https://pub-db5cfbac23934b6e9312219ce0bd3ca4.r2.dev/tyes/tyes-feed-page.mp4"
             }
+            poster="/hero-video-poster.webp"
             autoPlay
             playsInline
             muted
@@ -94,7 +96,7 @@ const VideoPlayer = () => {
         </div>
         <img
           src="/hand-holding-phone.png"
-          className=" max-md:-ml-[150px] w-[450px] min-w-[450px]  md:min-w-[550px] md:w-[550px] z-1 relative"
+          className=" max-md:-ml-[150px] w-[450px] min-w-[450px]  md:min-w-[550px] md:w-[550px] z-1 relative pointer-events-none select-none"
           alt=""
         />
         <div className="absolute bottom-0 left-0 right-0 w-full h-[100px]" />
@@ -143,7 +145,7 @@ const VideoPlayer = () => {
               ref={video}
               className="w-[280px] mt-[10px] h-[499px] rounded-bl-[20px] rounded-br-[20px] object-cover absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-1"
               src={
-                "https://pub-db5cfbac23934b6e9312219ce0bd3ca4.r2.dev/tyes%20demo.mp4?some=te"
+                "https://pub-db5cfbac23934b6e9312219ce0bd3ca4.r2.dev/tyes/tyes-feed-page.mp4"
               }
               playsInline
             />

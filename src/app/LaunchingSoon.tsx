@@ -1,5 +1,5 @@
-import { LucideDot, LucideStars } from "lucide-react"
-import { motion } from "motion/react"
+import { LucideDot, LucideStars } from "lucide-react";
+import { motion } from "motion/react";
 
 const LaunchingSoon = () => {
   return (
@@ -12,7 +12,7 @@ const LaunchingSoon = () => {
           duration: 20,
           ease: "linear",
           repeat: Infinity,
-          repeatType: "loop"
+          repeatType: "loop",
         }}
       >
         <div className="flex items-center justify-around w-full">
@@ -41,7 +41,7 @@ const LaunchingSoon = () => {
             <LucideDot className="size-8" />
           </span>
           <div className="-ml-[1px] max-xl:hidden">Launching soon</div>
-          <span className="text-xl opacity-7 max-xl:hidden">
+          <span className="text-xl opacity-70 max-xl:hidden">
             <LucideDot className="size-8" />
           </span>
         </div>
@@ -55,7 +55,7 @@ const LaunchingSoon = () => {
           duration: 20,
           ease: "linear",
           repeat: Infinity,
-          repeatType: "loop"
+          repeatType: "loop",
         }}
       >
         <div className="flex items-center justify-around w-full">
@@ -90,7 +90,7 @@ const LaunchingSoon = () => {
         </div>
       </motion.div>
     </div>
-  )
-}
+  );
+};
 
-export default LaunchingSoon
+export default LaunchingSoon;

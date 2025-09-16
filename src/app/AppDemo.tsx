@@ -1,36 +1,45 @@
 "use client";
 
-import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
-import {
-  HiChat,
-  HiCheckCircle,
-  HiCreditCard,
-  HiDeviceMobile,
-  HiOutlineTrendingUp,
-  HiPlusCircle,
-  HiSearchCircle,
-} from "react-icons/hi";
-import {
-  HiArrowUpCircle,
-  HiBellAlert,
-  HiEye,
-  HiPaintBrush,
-  HiPhone,
-} from "react-icons/hi2";
+import { HiChat, HiCheckCircle, HiSearchCircle } from "react-icons/hi";
+import { HiArrowUpCircle, HiBellAlert } from "react-icons/hi2";
+
+const Video = ({ src = "", isActive = false }) => {
+  const ref = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (isActive) {
+      ref.current!.play();
+    } else {
+      ref.current?.pause();
+      ref.current!.currentTime = 0;
+    }
+  }, [isActive]);
+
+  return (
+    <video
+      ref={ref}
+      src={src}
+      muted
+      playsInline
+      loop
+      className="w-[267px] min-w-[267px] rounded-[20px] object-cover"
+    />
+  );
+};
 
 const demoItems = [
   {
     label: "Join an event",
     Icon: HiArrowUpCircle,
-    img: "/event-page.jpeg",
+    img: "https://pub-db5cfbac23934b6e9312219ce0bd3ca4.r2.dev/tyes/tyes-join-event-example.mp4",
     description: "Join an event in just one click, directly from your feed.",
   },
   {
     label: "Chat, make friends",
     Icon: HiChat,
-    img: "/chat-screen.jpeg",
+    img: "https://pub-db5cfbac23934b6e9312219ce0bd3ca4.r2.dev/tyes/tyes-chat-screen.mp4",
     description:
       "Connect instantly—chat with other attendees and make new friends before, during the events.",
   },
@@ -41,24 +50,24 @@ const demoItems = [
   //   description:
   //     "Easily complete your event registration with secure and seamless payment options.",
   // },
-  {
-    label: "Create an event",
-    Icon: HiCheckCircle,
-    img: "/event-creation.jpeg",
-    description:
-      "Host your own gathering—set up an event in moments and share it with your community.",
-  },
+  // {
+  //   label: "Create an event",
+  //   Icon: HiCheckCircle,
+  //   img: "/event-creation.jpeg",
+  //   description:
+  //     "Host your own gathering—set up an event in moments and share it with your community.",
+  // },
   {
     label: "Discover events",
     Icon: HiSearchCircle,
-    img: "/event-shorts.jpeg",
+    img: "https://pub-db5cfbac23934b6e9312219ce0bd3ca4.r2.dev/tyes/tyes-explore-page.mp4?reload=true",
     description:
       "Discover new and unique events by viewing shorts from recent events!",
   },
   {
     label: "View live stories",
     Icon: HiBellAlert,
-    img: "/shorts-tyes.png",
+    img: "https://pub-db5cfbac23934b6e9312219ce0bd3ca4.r2.dev/tyes/tyes-stories.mp4",
     description:
       "View stories of recent and upcoming events, tailored to your interests. View who's attending, and join the event in just one click!",
   },
@@ -96,7 +105,7 @@ const AppDemo = () => {
     handleIdxUpdate(1, progress);
     handleIdxUpdate(2, progress);
     handleIdxUpdate(3, progress);
-    handleIdxUpdate(4, progress);
+    // handleIdxUpdate(4, progress);
   });
 
   return (
@@ -126,13 +135,10 @@ const AppDemo = () => {
                 }}
               >
                 {demoItems.map((item, idx) => (
-                  <Image
+                  <Video
                     key={idx}
-                    width={300}
-                    height={499}
+                    isActive={idx === activeIndex}
                     src={item.img}
-                    alt=""
-                    className="object-cover overflow-hidden w-[267px] min-w-[267px]  rounded-[20px]"
                   />
                 ))}
               </motion.div>
@@ -140,7 +146,7 @@ const AppDemo = () => {
           </div>
           <img
             src="/phone-outline.png"
-            className="h-auto relative z-1 w-full"
+            className="h-auto relative z-1 w-full pointer-events-none select-none"
             alt=""
           />
         </div>

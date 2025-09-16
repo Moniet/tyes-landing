@@ -1,14 +1,20 @@
-"use client"
+"use client";
 
-import Logo from "./logo"
-import { motion } from "motion/react"
-import VideoPlayer from "./VideoPlayer"
-import Gutter from "./Gutter"
-import LaunchingSoon from "./LaunchingSoon"
+import Logo from "./logo";
+import { motion } from "motion/react";
+import VideoPlayer from "./VideoPlayer";
+import Gutter from "./Gutter";
+import LaunchingSoon from "./LaunchingSoon";
 
 const Hero = () => {
   return (
     <div className="w-full lg:landscape:h-screen flex relative flex-col lg:flex-row max-w-screen overflow-hidden">
+      {/* Language option UI at top right */}
+      {/*<div className="absolute top-6 right-8 z-20 flex gap-2 text-xs font-medium bg-white/80 px-3 py-1 rounded-full shadow border border-zinc-100">
+        <span className="text-zinc-800">EN</span>
+        <span className="text-zinc-400">/</span>
+        <span className="text-zinc-800">ES</span>
+      </div>*/}
       <div className="md:flex-[1.2] xl:flex-1 pt-16 pb-16 md:py-20 max-lg:pb-0 xl:py-20 flex-col flex justify-start lg:items-center relative overflow-hidden h-full">
         <SVGAnimations />
         <Gutter className="pb-10 lg:pb-20">
@@ -31,21 +37,24 @@ const Hero = () => {
                     repeatDelay: 5,
                   }}
                 /> */}
-                <span className="text-base -mb-[1px]">🇦🇪 </span>{" "}
-                <span className="text-black/40 text-xs">Launching in UAE</span>
+                <span className="text-base -mb-[1px]">🇺🇸 </span>{" "}
+                <span className="text-black/60 text-xs">
+                  Launching in Miami
+                </span>
               </div>
               <h2 className=" max-[350px]:text-2xl  text-3xl mb-5 md:text-4xl xl:text-5xl font-medium max-w-fit md:leading-11 xl:leading-14">
                 Discover <span className="text-zinc-400">experiences.</span>
                 <br />
                 Connect with <span className="text-zinc-400">people.</span>
                 <br />
-                Collect <span className="text-zinc-400">memories.</span>
+                Make <span className="text-zinc-400">memories.</span>
                 <br />
               </h2>
             </div>
             <p className="font-medium md:text-base max-[500px]:text-sm text-base xl:text-lg max-w-[500px] mt-5 text-zinc-400">
-              Say yes to curated events where shared experiences turn strangers
-              into friends and moments into lasting memories.
+              Join curated social experiences that spark real connections and
+              unforgettable memories. Meeting people in Miami has never been
+              easier, or more fun!
             </p>
             <div className="flex items-center mt-10 relative z-10 max-md:pb-10">
               <button
@@ -53,7 +62,7 @@ const Hero = () => {
                 onClick={() => {
                   document
                     .querySelector("#footer")
-                    ?.scrollIntoView({ behavior: "smooth", block: "start" })
+                    ?.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
               >
                 Join waitlist
@@ -81,8 +90,8 @@ const Hero = () => {
       </div>*/}
       <LaunchingSoon />
     </div>
-  )
-}
+  );
+};
 
 function SVGAnimations() {
   return (
@@ -127,7 +136,7 @@ function SVGAnimations() {
               repeat: Infinity,
               repeatType: "loop",
               repeatDelay: 5,
-              delay: 30
+              delay: 30,
             }}
             d="M5 170.247C76.9915 128.842 240.222 62.5689 317.212 128.722C413.449 211.415 491.07 258.59 590.257 208.551C655.729 175.521 834.5 27 701.5 27C532.982 27 796.906 218.574 933.802 208.551C988.476 204.548 1005.55 58.0825 1014 2"
             stroke="#58B2AD"
@@ -152,7 +161,7 @@ function SVGAnimations() {
               repeat: Infinity,
               repeatType: "loop",
               repeatDelay: 25,
-              delay: 25
+              delay: 25,
             }}
             d="M10.1673 86.5295C23.4067 56.309 58.0361 1.77613 90.6383 25.4088C131.391 54.9495 232.031 68.8891 229.432 29.4088C226.834 -10.0715 102.71 18.4988 145.245 67.6539C187.78 116.809 400.712 59.2467 388.342 14.3641"
             stroke="#58B2AD"
@@ -178,7 +187,7 @@ function SVGAnimations() {
               repeat: Infinity,
               repeatType: "loop",
               repeatDelay: 30,
-              delay: 30
+              delay: 30,
             }}
             d="M12.5547 0.800767C12.5547 114.801 122.94 191.537 122.94 92.1028C122.94 11.084 -5.44531 152.301 12.5547 282.301"
             stroke="#58B2AD"
@@ -204,7 +213,7 @@ function SVGAnimations() {
               repeat: Infinity,
               repeatType: "loop",
               repeatDelay: 50,
-              delay: 50
+              delay: 50,
             }}
             d="M12.5547 0.800767C12.5547 114.801 122.94 191.537 122.94 92.1028C122.94 11.084 -5.44531 152.301 12.5547 282.301"
             stroke="#58B2AD"
@@ -214,7 +223,7 @@ function SVGAnimations() {
         </svg>
       </div>
     </>
-  )
+  );
 }
 
-export default Hero
+export default Hero;
