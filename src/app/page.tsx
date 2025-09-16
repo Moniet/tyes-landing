@@ -582,7 +582,7 @@ const LaunchingSoon = () => {
             <Image
               width={300}
               height={533}
-              src="/discover-1.png"
+              src="/discover.png"
               className="size-full object-cover"
               alt=""
             />
@@ -654,7 +654,7 @@ const LaunchingSoon = () => {
               width={300}
               height={533}
               alt=""
-              src="/tyes-logo-with-bg-1.png"
+              src="/tyes-logo-portrait.png"
               className="size-full object-cover max-sm:rounded-2xl"
             />
           </motion.div>
