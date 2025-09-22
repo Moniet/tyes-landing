@@ -530,7 +530,7 @@ const LaunchingSoon = () => {
       </div>
       <div className="w-fit h-fit relative">
         <p className="text-sm text-zinc-500 mt-3 max-w-[450px] leading-6">
-          We’re starting in the UAE — and we’d love to have you in early.
+          We’re starting in the Miami — and we’d love to have you in early.
           <br className="max-sm:hidden" /> Join our waitlist for first dibs on
           experiences and launch updates.
         </p>
