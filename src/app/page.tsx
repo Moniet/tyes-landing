@@ -828,7 +828,7 @@ const Footer = () => {
           <div className="w-full flex flex-col md:gap-10 max-lg:gap-16">
             <div className="flex w-full flex-1 justify-between gap-10 flex-wrap">
               <div className="flex flex-col space-y-2">
-                <div className="text-sm text-brand text-medium tracking-wide mb-5">
+                <div className="text-sm text-brand text-medium tracking-wide mb-5 uppercase">
                   Legal
                 </div>
                 <a
